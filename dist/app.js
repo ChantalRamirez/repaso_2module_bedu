@@ -20,13 +20,13 @@ var _morgan = require('morgan');
 
 var _morgan2 = _interopRequireDefault(_morgan);
 
-var _index = require('./routes/index');
+var _main = require('./routes/main');
 
-var _index2 = _interopRequireDefault(_index);
+var _main2 = _interopRequireDefault(_main);
 
-var _users = require('./routes/users');
+var _basic_calculator = require('./routes/api/v1/basic_calculator');
 
-var _users2 = _interopRequireDefault(_users);
+var _basic_calculator2 = _interopRequireDefault(_basic_calculator);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42,8 +42,8 @@ app.use(_express2.default.urlencoded({ extended: false }));
 app.use((0, _cookieParser2.default)());
 app.use(_express2.default.static(_path2.default.join(__dirname, 'public')));
 
-app.use('/', _index2.default);
-app.use('/users', _users2.default);
+app.use('/', _main2.default);
+app.use('/api/v1/basic_calculator', _basic_calculator2.default);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

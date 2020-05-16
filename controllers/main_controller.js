@@ -1,10 +1,8 @@
 const mainController ={
     index: (req, res, next) => {
-        res.render('main')
+        res.render('index')
     },
-    create: () =>{
-
-    },
+  
 
 }
 
